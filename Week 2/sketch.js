@@ -4,6 +4,7 @@ let beweeg_auto = 0;
 let beweeg_wolk = 0;
 let beweeg_auto2 = 0;
 let beweeg_ufo = 0;
+let timer = 0;
 function setup() {
   createCanvas(800, 600);
 }
@@ -12,7 +13,6 @@ function draw() {
   background(0,200,255);
 
   
-
 if (beweeg_zon > 900) {
   beweeg_zon = -100;
 }
@@ -33,12 +33,34 @@ triangle(300, 500, 500, 200, 600, 500);
 fill('#060606');
 rect(600, 430, 10, 70);
 rect(590, 370, 30, 100)
-fill('red');
+
+
+if (timer > 300) {
+ fill('red');
 circle(605, 385, 20);
-fill('yellow');
-circle(605, 418, 20);
-fill('green');
+}
+
+
+if (timer > 200 && timer < 300) {
+    fill("yellow");
+circle(605, 415, 20);
+  beweeg_auto = beweeg_auto + 1
+  beweeg_auto2 = beweeg_auto2 + 1
+}
+ if (timer < 200) {
+  fill("green")
 circle(605, 450, 20);
+ beweeg_auto = beweeg_auto + 5
+ beweeg_auto2 = beweeg_auto2 + 2
+}
+
+if (timer > 500) {
+  timer = 0;
+}
+
+text('timer:' + timer, 10, 20);
+timer = timer + 1
+
 
 //weg
 fill('#3d3a3a');
@@ -71,7 +93,7 @@ rect(-180+beweeg_auto2, 560, 70, 20);
 rect(-110+beweeg_auto2, 570, 10, 5);
 fill('black');
 circle(-145+beweeg_auto2 + 0, 580, 20);
-beweeg_auto2 += 0.1 * deltaTime;
+beweeg_auto2 =beweeg_auto2 + 0
 if (beweeg_auto2 > 1000) {
   beweeg_auto2 = -100;
 }
@@ -85,7 +107,7 @@ circle(-100+beweeg_auto  + 20, 500, 20);
 circle(-100+beweeg_auto + 80, 500, 20);
 fill('blue');
 triangle(-100+beweeg_auto + 50, 470, -100+beweeg_auto + 50, 450, -100+beweeg_auto + 100, 470);
-beweeg_auto += 0.2 * deltaTime;  
+beweeg_auto =beweeg_auto + 0  
 if (beweeg_auto > 900) {
   beweeg_auto = -100;
 }
@@ -120,7 +142,6 @@ fill('brown');
 rect(200, 500, 20, 100);
 fill('green');
 circle(210, 500, 80);
-
 
 
 
