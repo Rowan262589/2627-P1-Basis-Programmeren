@@ -19,9 +19,8 @@ if (beweeg_zon > 900) {
 //zon
 
 fill('yellow');
-circle(0+beweeg_zon,100, 100, 100);
+circle(0+beweeg_zon,100, 100, 200);
 beweeg_zon += 0.05 * deltaTime;
-
 
 //berg
 fill('gray');
@@ -58,7 +57,7 @@ if (timer > 500) {
   timer = 0;
 }
 
-text('timer:' + timer, 10, 20);
+text( timer, 0, 0);
 timer = timer + 1
 
 
@@ -92,7 +91,7 @@ fill('gray');
 rect(-180+beweeg_auto2, 560, 70, 20);
 rect(-110+beweeg_auto2, 570, 10, 5);
 fill('black');
-circle(-145+beweeg_auto2 + 0, 580, 20);
+circle(-150+beweeg_auto2 + 0, 580, 20);
 beweeg_auto2 =beweeg_auto2 + 0
 if (beweeg_auto2 > 1000) {
   beweeg_auto2 = -100;
@@ -109,7 +108,7 @@ fill('blue');
 triangle(-100+beweeg_auto + 50, 470, -100+beweeg_auto + 50, 450, -100+beweeg_auto + 100, 470);
 beweeg_auto =beweeg_auto + 0  
 if (beweeg_auto > 900) {
-  beweeg_auto = -100;
+  beweeg_auto = -200;
 }
 
 //wolk
@@ -142,35 +141,5 @@ fill('brown');
 rect(200, 500, 20, 100);
 fill('green');
 circle(210, 500, 80);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-strokeWeight(0)
+   strokeWeight(0)
 }
