@@ -1,6 +1,6 @@
 let beurt = "X";
 let spelKlaar = false;
-
+let counter = 0;
 let hokje1 = "";
 let hokje2 = "";
 let hokje3 = "";
@@ -17,12 +17,12 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background('255,255,255');
 
   // Bord
   fill("black");
   rect(25, 25, 350, 350, 20);
-
+ circle(200,200,400)
   fill("gray");
   rect(40, 40, 100, 100, 5);
   rect(150, 40, 100, 100, 5);
@@ -35,7 +35,46 @@ function draw() {
   rect(40, 260, 100, 100, 5);
   rect(150, 260, 100, 100, 5);
   rect(260, 260, 100, 100, 5);
+fill('black')
+  rect(5,395,390,30,10)
+  if (mouseX > 40 && mouseX < 140 && mouseY > 40 && mouseY < 140) {
+    fill(0, 0, 0, 100);
+    rect(40, 40, 100, 100);
+  }
+    if (mouseX > 40 && mouseX < 140 && mouseY > 150 && mouseY < 250) {
+    fill(0, 0, 0, 100);
+    rect(40, 150, 100, 100);
+  }
+   if (mouseX > 40 && mouseX < 140 && mouseY > 260 && mouseY < 360) {
+    fill(0, 0, 0, 100);
+    rect(40, 260, 100, 100);
+  }
 
+   if (mouseX > 150 && mouseX < 250 && mouseY > 40 && mouseY < 140) {
+    fill(0, 0, 0, 100);
+    rect(150, 40, 100, 100);
+  }
+    if (mouseX > 150 && mouseX < 250 && mouseY > 150 && mouseY < 250) {
+    fill(0, 0, 0, 100);
+    rect(150, 150, 100, 100);
+  }
+   if (mouseX > 150 && mouseX < 260 && mouseY > 260 && mouseY < 360) {
+    fill(0, 0, 0, 100);
+    rect(150, 260, 100, 100);
+  }
+
+  if (mouseX > 260 && mouseX < 360 && mouseY > 40 && mouseY < 140) {
+    fill(0, 0, 0, 100);
+    rect(260, 40, 100, 100);
+  }
+    if (mouseX > 260 && mouseX < 360 && mouseY > 150 && mouseY < 250) {
+    fill(0, 0, 0, 100);
+    rect(260, 150, 100, 100);
+  }
+   if (mouseX > 260 && mouseX < 360 && mouseY > 260 && mouseY < 360) {
+    fill(0, 0, 0, 100);
+    rect(260, 260, 100, 100);
+  }
   // Vakjes tekenen
   tekenVak(hokje1, 90, 90);
   tekenVak(hokje2, 200, 90);
@@ -54,21 +93,31 @@ function draw() {
   textSize(20);
 
   if (spelKlaar) {
+    fill('white')
     text("Spel afgelopen! Klik om opnieuw te spelen.", 200, 410);
   } else {
+    fill('white')
     text("Beurt van: " + beurt, 200, 410);
   }
+
+
+  
+
 }
 
-function tekenVak(vakje, x, y) {
+
+
+
+
+  function tekenVak(vakje, x, y) {
   if (vakje == "X") {
-    fill("blue");
+    fill("red");
     textSize(70);
     text("X", x, y);
   }
 
   if (vakje == "O") {
-    fill("red");
+    fill("blue");
     textSize(70);
     text("O", x, y);
   }
@@ -153,7 +202,11 @@ function mouseClicked() {
       wisselBeurt();
     }
   }
+ 
+ 
+
 }
+
 
 function wisselBeurt() {
   // Eerst controleren op winnaar
